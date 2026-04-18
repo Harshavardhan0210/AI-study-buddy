@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <h1>Your Tasks</h1>
+
+        <ul>
+            {%for task in tasks%}
+            <li>
+                {{task[1]}} - {{task[2]}} - {{task[3]}}
+                <a href="/complete/{{task[0]}}">✅</a>
+                <a href="/delete/{{task[0]}}">❌</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h2>Today's plan</h2>
+        <p>{{plan}}</p>
+        <a href="/">🔙</a>
+    </body>
+</html>
